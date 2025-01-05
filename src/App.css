@@ -1,38 +1,30 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.centered-text-field .MuiInputBase-input {
+    text-align: center;
   }
+
+  /* src/tabs/HomePageComponent.css */
+  .backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    backdrop-filter: blur(5px); /* Apply blur effect */
+    z-index: 999; /* Ensure it is below the content view */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.full-content-view {
+  animation: rotateIn 0.5s forwards; /* Add rotation animation */
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
+@keyframes rotateIn {
   from {
-    transform: rotate(0deg);
+      transform: translate(-50%, -50%) rotateY(90deg);
+      opacity: 0;
   }
   to {
-    transform: rotate(360deg);
+      transform: translate(-50%, -50%) rotateY(0deg);
+      opacity: 1;
   }
 }
