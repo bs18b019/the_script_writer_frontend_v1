@@ -20,9 +20,13 @@ function HomePageComponent() {
   const navigate = useNavigate();
   const [selectedContent, setSelectedContent] = useState(null); 
 
-  const filteredContents = contents?.filter(content => 
-    content.contentTitle.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const filteredContents = [];
+    if (!contents || !isArray(contents)) filteredContents = [];
+    else {
+      filteredContents = contents.filter(content => 
+        content.contentTitle.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+    }
 
   useEffect(() => {
     console.log(user);
