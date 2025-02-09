@@ -20,7 +20,7 @@ function HomePageComponent() {
   const navigate = useNavigate();
   const [selectedContent, setSelectedContent] = useState(null); 
 
-  const filteredContents = contents.filter(content => 
+  const filteredContents = contents?.filter(content => 
     content.contentTitle.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
